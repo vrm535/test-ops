@@ -1,0 +1,20 @@
+apiVersion: 'argoproj.io/v1alpha1'
+kind: Application
+metadata:
+  name: sb-nginx
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sherwin-williams/test-ops
+    path: k8s/SB/
+    targetRevision: HEAD
+  destination:
+    name: 'docker-desktop'
+    namespace: 'sb-nginx'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
