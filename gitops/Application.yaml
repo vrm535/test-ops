@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/sherwin-williams/test-ops
+    repoURL: https://github.com/vrm535/test-ops
     path: k8s/SB/
     targetRevision: HEAD
   destination:
